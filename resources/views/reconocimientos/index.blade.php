@@ -13,10 +13,6 @@
                 <h3>Estudiante {{ $reconocimientos[$i]['estudiante_id'] }}</h3>
             </header>
             <p>
-            <!--
-                El siguiente código debe ser adaptado.
-                Una vez adaptado, elimina este comentario.
-            -->
                 <a href="{{$reconocimientos[$i]['documento'] }}">
                     {{ $reconocimientos[$i]['documento'] }}
                 </a>
