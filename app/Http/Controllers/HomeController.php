@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function getHome()
     {
-        return redirect()->action([ReconocimientoController::class, 'getIndex']);
+        return redirect()->action([ProyectosController::class, 'getIndex']);
     }
 }

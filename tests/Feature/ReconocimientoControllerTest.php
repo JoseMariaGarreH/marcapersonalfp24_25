@@ -17,7 +17,7 @@ class ReconocimientoControllerTest extends TestCase
             $response = $this->get('/');
 
             $response
-                ->assertRedirect('/reconocimientos');
+                ->assertRedirect('/proyectos');
 
         /**
          * login test.
