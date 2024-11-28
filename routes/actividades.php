@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActividadController;
+use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'actividades'], function(){
     Route::get('/', [ActividadController::class, 'getIndex']);
