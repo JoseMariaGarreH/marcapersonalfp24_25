@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('estudiantes', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id')->nullable()->after('ciclo');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('apellidos',100)->nullable()->after('nombre');
+            $table->string('direccion',200)->nullable()->after('apellidos');
+            $table->integer('votos')->unsigned()->default(0)->after('direccion');
+            $table->boolean('confirmado')->default(0)->after('votos');
         });
     }
 
@@ -23,8 +25,10 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('estudiantes', function (Blueprint $table) {
-            $table->dropForeign('estudiantes_user_id_foreign');
-            $table->dropColumn('user_id');
+            $table->dropColumn('apellidos');
+            $table->dropColumn('direccion');
+            $table->dropColumn('votos');
+            $table->dropColumn('confirmado');
         });
     }
 };
