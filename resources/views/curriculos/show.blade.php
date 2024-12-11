@@ -12,16 +12,16 @@
         </div>
         <div class="col-sm-8">
 
-            <h3><strong>Curriculo ID: </strong>{{ $curriculos['user_id'] }}</h3>
+            <h3><strong>Curriculo ID: </strong>{{ $curriculo->user_id }}</h3>
             <h4><strong>Video curriculo: </strong>
-                <a href="http://github.com/2DAW-CarlosIII/{{ $curriculos['video_curriculum'] }}">
-                    http://github.com/2DAW-CarlosIII/{{ $curriculos['video_curriculum'] }}
+                <a href="http://github.com/2DAW-CarlosIII/{{ $curriculo->video_curriculum  }}">
+                    http://github.com/2DAW-CarlosIII/{{ $curriculo->video_curriculum  }}
                 </a>
             </h4>
-            <p><strong>Texto del Curriculo </strong> {{ $curriculos['texto_curriculum'] }}
+            <p><strong>Texto del Curriculo </strong> {{ $curriculo->texto_curriculum }}
             </p>
 
-            <a class="btn btn-warning" href="{{ action([App\Http\Controllers\CurriculoController::class, 'getEdit'], ['id' => $id]) }}">
+            <a class="btn btn-warning" href="{{ action([App\Http\Controllers\CurriculoController::class, 'getEdit'], ['id' => $curriculo->user_id]) }}">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 Editar curriculo
             </a>
