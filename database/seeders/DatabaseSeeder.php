@@ -16,14 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-
         Model::unguard();
         Schema::disableForeignKeyConstraints();
-
-        $this->call(CurriculosTableSeeder::class);
-
-        Model::reguard();
-        Schema::enableForeignKeyConstraints();
 
         // User::factory(10)->create();
         if(User::count() == 0) {
@@ -37,6 +31,11 @@ class DatabaseSeeder extends Seeder
         }
 
         self::seedProyectos();
+
+        $this->call(CurriculosTableSeeder::class);
+
+        Model::reguard();
+        Schema::enableForeignKeyConstraints();
         $this->command->info('Tabla proyectos inicializada con datos!');
     }
     private static function seedProyectos()

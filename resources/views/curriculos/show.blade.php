@@ -21,7 +21,7 @@
             <p><strong>Texto del Curriculo </strong> {{ $curriculo->texto_curriculum }}
             </p>
 
-            <a class="btn btn-warning" href="{{ action([App\Http\Controllers\CurriculoController::class, 'getEdit'], ['id' => $curriculo->user_id]) }}">
+            <a class="btn btn-warning" href="{{ action([App\Http\Controllers\CurriculoController::class, 'getEdit'], ['id' => $curriculo->id]) }}">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                 Editar curriculo
             </a>
