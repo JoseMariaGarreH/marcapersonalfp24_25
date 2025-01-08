@@ -24,16 +24,25 @@
           <a href="#">Usuario</a>
 
           <ul style="user-select: none; display: none; position: absolute;" class="">
-              <li style="white-space: nowrap;"><a href="/login" style="display: block;">Login</a></li>
-              <li style="white-space: nowrap;"><a href="/register" style="display: block;">Register</a></li>
-              <li style="user-select: none; cursor: pointer; white-space: nowrap;" class="opener">
-                  <a href="#" style="display: block;">Más opciones de usuario</a>
-                  <ul style="user-select: none; display: none; position: absolute;" class="dropotron">
-                      <li style="white-space: nowrap;"><a href="/dashboard" style="display: block;">Dashboard</a></li>
-                      <li style="white-space: nowrap;"><a href="/profile.edit" style="display: block;">Profile</a></li>
-                      <li style="white-space: nowrap;"><a href="/logout" style="display: block;">Logout</a></li>
-                  </ul>
-              </li>
+              @auth
+                <li style="white-space: nowrap;"><a href="/dashboard" style="display: block;">Dashboard</a></li>
+                <li style="white-space: nowrap;"><a href="/profile" style="display: block;">Profile</a></li>
+                <li style="white-space: nowrap;">
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
+                </li>
+              @else
+                <li style="white-space: nowrap;"><a href="/login" style="display: block;">Login</a></li>
+                <li style="white-space: nowrap;"><a href="/register" style="display: block;">Register</a></li>
+              @endauth
           </ul>
       </li>
   </ul>
