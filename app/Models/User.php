@@ -24,6 +24,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public static $filterColumns = ['name', 'nombre', 'apellidos', 'email'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -46,5 +47,8 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function curriculo(){
+        return $this->hasOne(Curriculo::class, 'user_id', 'id');
     }
 }
