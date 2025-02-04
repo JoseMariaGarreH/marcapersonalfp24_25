@@ -14,4 +14,10 @@ class FamiliaProfesional extends Model
         'nombre',
         'imagen'
     ];
+
+    public static $filterColumns = ['codigo', 'nombre'];
+
+    public function ciclos(){
+        return $this->hasMany(Ciclo::class, 'familia_id', 'id');
+    }
 }
