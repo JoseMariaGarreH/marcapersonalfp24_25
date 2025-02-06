@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 100);
             $table->string('color', 30)->nullable();
-            
+
             $table->timestamps();
         });
 
@@ -39,5 +39,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('competencias');
+        Schema::dropIfExists('competencias_actividades');
     }
 };
