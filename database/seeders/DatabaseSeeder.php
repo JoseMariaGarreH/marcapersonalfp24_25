@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Tabla actividades inicializada con datos!');
         $this->call(CompetenciasTableSeeder::class);
         $this->command->info('Tabla competencias inicializada con datos!');
+        $this->call(CompetenciasActividadesTableSeeder::class);
+        $this->command->info('Tabla competencias_actividades inicializada con datos!');
         $this->call(CurriculosTableSeeder::class);
         $this->command->info('Tabla curriculos inicializada con datos!');
         $this->call(FamiliasProfesionalesTableSeeder::class);
