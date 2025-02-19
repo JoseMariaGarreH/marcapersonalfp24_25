@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\ActividadController;
+use App\Http\Controllers\API\AdministradorController;
 use App\Http\Controllers\API\CicloController;
 use App\Http\Controllers\API\CompetenciaController;
 use App\Http\Controllers\API\CurriculoController;
@@ -36,6 +37,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('curriculos', CurriculoController::class)
         ->middleware(['auth:sanctum']);
     Route::apiResource('users', UserController::class);
+    Route::apiResource('administradores', AdministradorController::class);
     Route::apiResource('proyectos', ProyectoController::class);
     Route::apiResource('reconocimientos', ReconocimientoController::class);
     Route::apiResource('participantes_proyectos', ParticipanteProyectoController::class);
